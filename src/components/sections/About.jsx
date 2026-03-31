@@ -21,7 +21,9 @@ const About = () => {
         max: 15,
         speed: 400,
         glare: true,
-        "max-glare": 0.2,
+        "max-glare": 0.3,
+        perspective: 1000,
+        scale: 1.05,
       });
     }
 
@@ -52,19 +54,48 @@ const About = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-12">
           
-          <div className="flex justify-center">
+          <div className="flex justify-center relative group">
+            {/* Background Glow behind the card */}
+            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-cyan/20 to-purple-accent/20 blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
             <div 
               ref={tiltRef} 
-              className="relative w-full max-w-[350px] aspect-square rounded-2xl overflow-hidden border-2 border-white/10 shadow-[0_0_30px_rgba(124,58,237,0.2)]"
+              className="relative w-full max-w-[350px] aspect-square rounded-2xl border-2 border-white/10 shadow-[0_0_30px_rgba(124,58,237,0.2)] bg-[#0a0f1e]"
+              style={{ transformStyle: 'preserve-3d' }}
             >
-              <div className="absolute inset-0 bg-blue-cyan/20 mix-blend-overlay z-10 transition-opacity duration-500 hover:opacity-0"></div>
-              <img 
-                src={profileImg} 
-                alt="Albin Raju" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
-              />
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-blue-cyan z-20 m-4 pointer-events-none"></div>
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-purple-accent z-20 m-4 pointer-events-none"></div>
+              {/* Back Glow Plate (Deep Layer) */}
+              <div 
+                className="absolute inset-0 bg-gradient-to-br from-blue-cyan/10 to-purple-accent/10 rounded-2xl blur-xl"
+                style={{ transform: 'translateZ(-50px)' }}
+              ></div>
+
+              {/* Main Image (Middle Layer) */}
+              <div className="absolute inset-0 overflow-hidden rounded-2xl">
+                <img 
+                  src={profileImg} 
+                  alt="Albin Raju" 
+                  className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-100 brightness-110 contrast-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/60 to-transparent"></div>
+              </div>
+
+              {/* Floating Accents (Front Layer) */}
+              <div 
+                className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-blue-cyan z-20 m-4 pointer-events-none"
+                style={{ transform: 'translateZ(60px)' }}
+              ></div>
+              <div 
+                className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-purple-accent z-20 m-4 pointer-events-none"
+                style={{ transform: 'translateZ(60px)' }}
+              ></div>
+
+              {/* Glassmorphic Badge (Front Layer) */}
+              <div 
+                className="absolute -top-4 -right-12 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl z-30"
+                style={{ transform: 'translateZ(80px)' }}
+              >
+                <span className="text-blue-cyan font-mono text-[10px] uppercase tracking-widest font-bold">DEVOPS ENGINEER</span>
+              </div>
             </div>
           </div>
 

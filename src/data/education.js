@@ -8,8 +8,12 @@ export const education = [
     grade: null,
     bullets: [
       "Presented UAWID research paper at NCACA 2024 national conference",
-    ],
-  },
+      "Represented MCA department during NAAC-related academic evaluation activities",
+      "Built and deployed projects using Docker, CI/CD pipelines, and cloud platforms",
+      "Conducted technical sessions for visiting students on web and system fundamentals",
+      "Worked on real-time deployment and server management practices during academic projects",
+    ]
+   },
   {
     id: 2,
     degree: "Bachelor of Computer Applications (BCA)",

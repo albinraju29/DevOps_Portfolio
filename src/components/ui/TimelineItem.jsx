@@ -17,7 +17,7 @@ const TimelineItem = ({ data, isLeft, index }) => {
         whileInView={{ opacity: 1, x: 0, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className={`w-full md:w-[45%] pl-[50px] md:pl-0 ${isLeft ? 'md:text-right' : 'text-left'}`}
+        className="w-full md:w-[45%] pl-[50px] md:pl-0 text-left"
       >
         <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors duration-300 relative group overflow-hidden">
 
@@ -38,9 +38,12 @@ const TimelineItem = ({ data, isLeft, index }) => {
             </p>
           )}
           {data.bullets && data.bullets.length > 0 && (
-            <ul className={`text-sm font-mono text-gray-500 leading-relaxed space-y-1 ${isLeft ? 'md:text-right' : 'text-left'}`}>
+            <ul className="text-sm font-mono text-gray-500 leading-relaxed space-y-1.5 text-left">
               {data.bullets.map((bullet, idx) => (
-                <li key={idx}>• {bullet}</li>
+                <li key={idx} className="flex gap-2">
+                  <span className="text-blue-cyan flex-shrink-0">•</span>
+                  <span>{bullet}</span>
+                </li>
               ))}
             </ul>
           )}
