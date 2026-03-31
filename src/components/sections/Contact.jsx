@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import { Mail, Send, CheckCircle2 } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -22,28 +21,36 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
 
-    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    emailjs.send(serviceID, templateID, formData, publicKey)
-      .then(() => {
+      const data = await response.json();
+
+      if (response.ok) {
         setIsSubmitting(false);
         setIsSuccess(true);
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
         
         setTimeout(() => setIsSuccess(false), 5000);
-      })
-      .catch((err) => {
-        console.error("EmailJS Error:", err);
-        setIsSubmitting(false);
-        setError('Something went wrong. Please try again later.');
-      });
+      } else {
+        throw new Error(data.error || 'Failed to send message');
+      }
+    } catch (err) {
+      console.error("Submission Error:", err);
+      setIsSubmitting(false);
+      setError(err.message || 'Something went wrong. Please try again later.');
+    }
   };
 
   return (
