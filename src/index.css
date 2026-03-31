@@ -21,6 +21,29 @@
     font-family: 'Syne', sans-serif;
   }
 
+  /* Form inputs - ensure text is visible */
+  input, textarea {
+    color: #ffffff !important;
+    caret-color: #00D9FF;
+  }
+
+  input::placeholder, textarea::placeholder {
+    color: #64748b !important;
+    opacity: 1;
+  }
+
+  /* Browser autofill styling */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #ffffff !important;
+    -webkit-box-shadow: 0 0 0px 1000px #0a0f1e inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
   /* Custom scrollbar for better look */
   ::-webkit-scrollbar {
     width: 8px;

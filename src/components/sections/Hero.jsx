@@ -15,8 +15,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   const heroRef = useRef(null);
-  const nameRef = useRef(null);
   const globeContainerRef = useRef(null);
+
+  const name = "Albin Raju";
+  const nameLetters = name.split("");
 
   useEffect(() => {
     // Scroll-driven globe animation
@@ -37,27 +39,6 @@ const Hero = () => {
         }
       );
     }
-
-    // GSAP Letter-by-letter reveal for name
-    const chars = nameRef.current.innerText.split('');
-    nameRef.current.innerText = '';
-    
-    chars.forEach((char) => {
-      const span = document.createElement('span');
-      span.innerText = char;
-      span.style.opacity = 0;
-      span.style.display = 'inline-block';
-      nameRef.current.appendChild(span);
-    });
-
-    gsap.to(nameRef.current.children, {
-      opacity: 1,
-      y: 0,
-      stagger: 0.1,
-      duration: 1,
-      ease: "power3.out",
-      delay: 0.5
-    });
   }, []);
 
   return (
@@ -107,12 +88,27 @@ const Hero = () => {
             Available for freelance
           </motion.div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-syne font-bold leading-tight flex flex-col">
-            <span className="text-white relative">
-              Hi, I'm <br />
-              <span ref={nameRef} className="text-transparent bg-clip-text bg-gradient-to-r from-blue-cyan to-purple-accent">
-                Albin Raju
-              </span>
+          <h1 className="font-syne leading-tight flex flex-col gap-1">
+            <span className="text-white text-3xl md:text-4xl font-medium">
+              Hi, I'm
+            </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-cyan via-cyan-400 to-purple-accent inline-block text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight whitespace-nowrap" style={{ textShadow: '0 0 40px rgba(0, 217, 255, 0.3)' }}>
+              {nameLetters.map((letter, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 20, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: 0.3 + index * 0.05,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                  className="inline-block"
+                  style={letter === " " ? { width: "0.3em" } : {}}
+                >
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              ))}
             </span>
           </h1>
 
