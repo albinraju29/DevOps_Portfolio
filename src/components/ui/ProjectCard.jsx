@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { FaGithub, FaReact, FaAws, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker } from 'react-icons/fa';
+import { FaGithub, FaReact, FaAws, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker, FaCloud, FaTerminal, FaCode } from 'react-icons/fa';
 import {
   SiKubernetes,
   SiTerraform,
@@ -21,15 +21,21 @@ import {
   SiPandas,
   SiGnubash,
   SiTypescript,
+  SiYaml,
 } from 'react-icons/si';
+import { VscAzureDevops, VscAzure, VscTerminalPowershell } from 'react-icons/vsc';
 
 // Comprehensive tech icon mapping with brand colors
 const getTechIcon = (techName) => {
   const t = techName.toLowerCase();
-
+  
   // Cloud & Infrastructure
   if (t.includes('aws') || t.includes('amazon')) return <FaAws size={40} className="text-[#FF9900]" />;
-  if (t.includes('azure')) return <span className="text-[#0078D4] font-bold text-2xl">⚙️</span>;
+
+  // Cloud & Infrastructure
+  if (t.includes('azure devops')) return <VscAzureDevops size={40} className="text-[#0078D4]" />;
+  if (t.includes('azure pipelines')) return <VscAzureDevops size={40} className="text-[#0078D4]" />;
+  if (t.includes('azure')) return <VscAzure size={40} className="text-[#0078D4]" />;
   if (t.includes('terraform')) return <SiTerraform size={40} className="text-[#7B42BC]" />;
   if (t.includes('ansible')) return <SiAnsible size={40} className="text-[#EE0000]" />;
   if (t.includes('docker')) return <FaDocker size={40} className="text-[#2496ED]" />;
@@ -42,10 +48,10 @@ const getTechIcon = (techName) => {
   if (t.includes('git') && !t.includes('github')) return <FaGitAlt size={40} className="text-[#F05032]" />;
   if (t.includes('github')) return <FaGithub size={40} className="text-[#181717]" />;
   if (t.includes('bash')) return <SiGnubash size={40} className="text-[#4EAA25]" />;
-  if (t.includes('powershell')) return <span className="text-[#5391FE] font-bold text-2xl">PS</span>;
+  if (t.includes('powershell')) return <VscTerminalPowershell size={40} className="text-[#5391FE]" />;
   if (t.includes('iac') || t.includes('infrastructure')) return <SiTerraform size={40} className="text-[#7B42BC]" />;
   if (t.includes('hcl')) return <SiTerraform size={40} className="text-[#7B42BC]" />;
-  if (t.includes('yaml')) return <span className="text-[#CB171E] font-bold text-xl">YML</span>;
+  if (t.includes('yaml')) return <SiYaml size={40} className="text-[#CB171E]" />;
   if (t.includes('ci/cd') || t.includes('ci') || t.includes('cd')) return <SiJenkins size={40} className="text-[#D24939]" />;
 
   // Programming Languages
@@ -127,11 +133,44 @@ const ProjectCard = ({ project }) => {
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center gap-6 bg-gradient-to-br from-[#141b2d] to-[#080d1a]">
-            {project.tech.slice(0, 3).map((t, i) => (
-              <div key={i} className="opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
-                {getTechIcon(t)}
-              </div>
-            ))}
+            {(() => {
+              const seen = new Set();
+              const icons = [];
+              
+              // First pass: Technical Icons from tech stack
+              for (const t of project.tech) {
+                const icon = getTechIcon(t);
+                if (!icon) continue;
+                
+                const key = icon.type?.displayName || icon.type?.name || JSON.stringify(icon.props);
+                if (seen.has(key)) continue;
+                
+                seen.add(key);
+                icons.push(icon);
+                if (icons.length >= 3) break;
+              }
+              
+              // Second pass: Fill with fallbacks if fewer than 3
+              const fallbacks = [
+                <FaCloud size={40} className="text-blue-cyan/40" />,
+                <FaTerminal size={40} className="text-purple-accent/40" />,
+                <FaCode size={40} className="text-gray-400/40" />
+              ];
+              
+              for (const fb of fallbacks) {
+                if (icons.length >= 3) break;
+                const fbKey = fb.type?.displayName || fb.type?.name || JSON.stringify(fb.props);
+                if (!seen.has(fbKey)) {
+                  icons.push(fb);
+                }
+              }
+              
+              return icons.slice(0, 3).map((icon, i) => (
+                <div key={i} className="opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                  {icon}
+                </div>
+              ));
+            })()}
           </div>
         )}
 

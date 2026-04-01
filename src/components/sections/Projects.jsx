@@ -19,14 +19,14 @@ const Projects = () => {
         <SectionHeading title="Selected Works" subtitle="Projects" />
 
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mt-12 mb-16">
+        <div className="flex flex-wrap justify-center gap-4 mt-12 mb-16 relative z-50">
           {filters.map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2 rounded-full font-mono text-sm transition-all duration-300 ${
+              className={`px-6 py-2 rounded-full font-mono text-sm transition-all duration-300 relative z-50 cursor-pointer ${
                 activeFilter === filter
-                  ? 'bg-blue-cyan text-dark font-bold shadow-[0_0_15px_rgba(0,217,255,0.4)] relative z-10 border border-transparent'
+                  ? 'bg-blue-cyan text-dark font-bold shadow-[0_0_15px_rgba(0,217,255,0.4)] border border-transparent'
                   : 'bg-transparent text-gray-400 border border-white/20 hover:border-white/50 hover:text-white'
               }`}
             >
