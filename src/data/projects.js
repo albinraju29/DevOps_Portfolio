@@ -1,5 +1,5 @@
 export const projects = [
-  // DevOps — LinkedIn Projects (no GitHub repo, use tech logo fallback as card visual)
+  // DevOps — LinkedIn Projects (no GitHub repo)
   {
     id: 1,
     title: "Azure DevOps CI/CD Pipeline",
@@ -9,7 +9,7 @@ export const projects = [
     tech: ["Azure DevOps", "Git", "PowerShell", "CI/CD"],
     github: null,
     live: null,
-    image: null, // use tech logo fallback
+    image: null, // Tech icons fallback
   },
   {
     id: 2,
@@ -55,7 +55,7 @@ export const projects = [
     tech: ["Terraform", "AWS", "HCL"],
     github: "https://github.com/albinraju29/terraform-aws-infra",
     live: null,
-    image: "https://opengraph.githubassets.com/1/albinraju29/terraform-aws-infra",
+    image: null, // Tech icons fallback
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ export const projects = [
     tech: ["Ansible", "Linux", "YAML"],
     github: "https://github.com/albinraju29/ansible-server-automation",
     live: null,
-    image: "https://opengraph.githubassets.com/1/albinraju29/ansible-server-automation",
+    image: null,
   },
   {
     id: 7,
@@ -77,7 +77,7 @@ export const projects = [
     tech: ["Kubernetes", "Bash", "Linux"],
     github: "https://github.com/albinraju29/kubernetes_install-main",
     live: null,
-    image: "https://opengraph.githubassets.com/1/albinraju29/kubernetes_install-main",
+    image: null,
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ export const projects = [
     tech: ["Docker", "Docker Compose", "JavaScript"],
     github: "https://github.com/albinraju29/full-stack-docker",
     live: null,
-    image: "https://opengraph.githubassets.com/1/albinraju29/full-stack-docker",
+    image: null,
   },
 
   // College Projects
@@ -101,7 +101,7 @@ export const projects = [
     tech: ["Django", "MySQL", "OpenCV", "Python", "Machine Learning", "Computer Vision"],
     github: "https://github.com/albinraju29/MindMap",
     live: null,
-    image: "https://opengraph.githubassets.com/1/albinraju29/MindMap",
+    image: null,
   },
   {
     id: 10,
@@ -112,7 +112,7 @@ export const projects = [
     tech: ["Python", "Machine Learning", "Lasso Regression", "Ridge Regression"],
     github: "https://github.com/albinraju29/bike-rental-system",
     live: null,
-    image: "https://opengraph.githubassets.com/1/albinraju29/bike-rental-system",
+    image: null,
   },
   {
     id: 11,
@@ -123,7 +123,7 @@ export const projects = [
     tech: ["Python", "Scikit-learn", "NLP", "TF-IDF", "Pandas", "Matplotlib"],
     github: "https://github.com/albinraju29/book-classification",
     live: null,
-    image: "https://opengraph.githubassets.com/1/albinraju29/book-classification",
+    image: null,
   },
 
   // Games — all hosted on GitHub Pages
@@ -135,7 +135,7 @@ export const projects = [
     tech: ["JavaScript", "HTML", "CSS"],
     github: "https://github.com/albinraju29/neon-tic-tac-toe",
     live: "https://albinraju29.github.io/neon-tic-tac-toe",
-    image: "https://opengraph.githubassets.com/1/albinraju29/neon-tic-tac-toe",
+    image: null,
   },
   {
     id: 13,
@@ -145,7 +145,7 @@ export const projects = [
     tech: ["JavaScript", "HTML", "CSS"],
     github: "https://github.com/albinraju29/tictactoe-web",
     live: "https://albinraju29.github.io/tictactoe-web",
-    image: "https://opengraph.githubassets.com/1/albinraju29/tictactoe-web",
+    image: null,
   },
   {
     id: 14,
@@ -155,7 +155,7 @@ export const projects = [
     tech: ["JavaScript", "HTML", "CSS"],
     github: "https://github.com/albinraju29/snake_game",
     live: "https://albinraju29.github.io/snake_game",
-    image: "https://opengraph.githubassets.com/1/albinraju29/snake_game",
+    image: null,
   },
   {
     id: 15,
@@ -166,7 +166,7 @@ export const projects = [
     tech: ["JavaScript", "HTML", "Canvas API"],
     github: "https://github.com/albinraju29/flappy_bird_game",
     live: "https://albinraju29.github.io/flappy_bird_game",
-    image: "https://opengraph.githubassets.com/1/albinraju29/flappy_bird_game",
+    image: null,
   },
   {
     id: 16,
@@ -177,6 +177,6 @@ export const projects = [
     tech: ["JavaScript", "HTML", "Canvas API"],
     github: "https://github.com/albinraju29/dino_game",
     live: "https://albinraju29.github.io/dino_game",
-    image: "https://opengraph.githubassets.com/1/albinraju29/dino_game",
+    image: null,
   },
 ]

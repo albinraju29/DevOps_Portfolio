@@ -3,11 +3,11 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SectionHeading from '../ui/SectionHeading';
 import TimelineItem from '../ui/TimelineItem';
-import { experience } from '../../data/experience';
+import { education } from '../../data/education';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Experience = () => {
+const Education = () => {
   const lineRef = useRef(null);
   const sectionRef = useRef(null);
 
@@ -30,13 +30,13 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" ref={sectionRef} className="py-24 relative bg-[#080d1a] border-b border-white/5 overflow-hidden">
+    <section id="education" ref={sectionRef} className="py-24 relative bg-dark border-b border-white/5 overflow-hidden">
       
       {/* Background decoration */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-cyan/5 blur-[120px] rounded-full pointer-events-none translate-y-1/2 translate-x-1/2"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-accent/5 blur-[120px] rounded-full pointer-events-none -translate-y-1/2 -translate-x-1/2"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <SectionHeading title="Experience" subtitle="Professional Journey" />
+        <SectionHeading title="Education" subtitle="Academic Foundation" />
 
         <div className="relative mt-20 max-w-5xl mx-auto">
           {/* Vertical Line */}
@@ -45,11 +45,11 @@ const Experience = () => {
           {/* Animated GSAP Line */}
           <div 
             ref={lineRef}
-            className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-cyan via-purple-accent to-transparent origin-top -translate-x-1/2 pointer-events-none z-10"
+            className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-purple-accent via-blue-cyan to-transparent origin-top -translate-x-1/2 pointer-events-none z-10"
           ></div>
 
           <div className="relative z-20">
-            {experience.map((item, idx) => (
+            {education.map((item, idx) => (
               <TimelineItem key={item.id} data={item} index={idx} isLeft={idx % 2 === 0} />
             ))}
           </div>
@@ -60,4 +60,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Education;

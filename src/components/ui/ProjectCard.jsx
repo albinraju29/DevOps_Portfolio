@@ -2,24 +2,90 @@ import React, { useRef, useEffect } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { FaDocker, FaAws, FaPython, FaJava, FaReact, FaGithub } from 'react-icons/fa';
-import { SiKubernetes, SiSpringboot, SiMysql, SiUnity } from 'react-icons/si';
+import { FaGithub, FaReact, FaAws, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker } from 'react-icons/fa';
+import {
+  SiKubernetes,
+  SiTerraform,
+  SiAnsible,
+  SiJenkins,
+  SiPrometheus,
+  SiGrafana,
+  SiNginx,
+  SiLinux,
+  SiJavascript,
+  SiDjango,
+  SiMysql,
+  SiTensorflow,
+  SiScikitlearn,
+  SiOpencv,
+  SiPandas,
+  SiGnubash,
+  SiTypescript,
+} from 'react-icons/si';
 
-// Helper for fallback icons
+// Comprehensive tech icon mapping with brand colors
 const getTechIcon = (techName) => {
   const t = techName.toLowerCase();
+
+  // Cloud & Infrastructure
+  if (t.includes('aws') || t.includes('amazon')) return <FaAws size={40} className="text-[#FF9900]" />;
+  if (t.includes('azure')) return <span className="text-[#0078D4] font-bold text-2xl">⚙️</span>;
+  if (t.includes('terraform')) return <SiTerraform size={40} className="text-[#7B42BC]" />;
+  if (t.includes('ansible')) return <SiAnsible size={40} className="text-[#EE0000]" />;
   if (t.includes('docker')) return <FaDocker size={40} className="text-[#2496ED]" />;
   if (t.includes('kubernetes')) return <SiKubernetes size={40} className="text-[#326CE5]" />;
-  if (t.includes('aws')) return <FaAws size={40} className="text-[#FF9900]" />;
-  if (t.includes('python')) return <FaPython size={40} className="text-[#3776AB]" />;
-  if (t.includes('java')) return <FaJava size={40} className="text-[#007396]" />;
-  if (t.includes('react')) return <FaReact size={40} className="text-[#61DAFB]" />;
-  if (t.includes('spring')) return <SiSpringboot size={40} className="text-[#6DB33F]" />;
-  if (t.includes('mysql')) return <SiMysql size={40} className="text-[#4479A1]" />;
-  if (t.includes('unity')) return <SiUnity size={40} className="text-[#ffffff]" />;
+  if (t.includes('nginx')) return <SiNginx size={40} className="text-[#009639]" />;
+  if (t.includes('linux')) return <SiLinux size={40} className="text-[#FCC624]" />;
+  if (t.includes('jenkins')) return <SiJenkins size={40} className="text-[#D24939]" />;
+  if (t.includes('prometheus')) return <SiPrometheus size={40} className="text-[#E6522C]" />;
+  if (t.includes('grafana')) return <SiGrafana size={40} className="text-[#F46800]" />;
+  if (t.includes('git') && !t.includes('github')) return <FaGitAlt size={40} className="text-[#F05032]" />;
+  if (t.includes('github')) return <FaGithub size={40} className="text-[#181717]" />;
+  if (t.includes('bash')) return <SiGnubash size={40} className="text-[#4EAA25]" />;
+  if (t.includes('powershell')) return <span className="text-[#5391FE] font-bold text-2xl">PS</span>;
+  if (t.includes('iac') || t.includes('infrastructure')) return <SiTerraform size={40} className="text-[#7B42BC]" />;
+  if (t.includes('hcl')) return <SiTerraform size={40} className="text-[#7B42BC]" />;
+  if (t.includes('yaml')) return <span className="text-[#CB171E] font-bold text-xl">YML</span>;
+  if (t.includes('ci/cd') || t.includes('ci') || t.includes('cd')) return <SiJenkins size={40} className="text-[#D24939]" />;
 
-  // Default text fallback
-  return <span className="font-mono text-gray-400 font-bold uppercase text-xl">{techName[0]}</span>;
+  // Programming Languages
+  if (t.includes('python')) return <FaPython size={40} className="text-[#3776AB]" />;
+  if (t.includes('javascript') || t.includes('js')) return <SiJavascript size={40} className="text-[#F7DF1E]" />;
+  if (t.includes('typescript') || t.includes('ts')) return <SiTypescript size={40} className="text-[#3178C6]" />;
+  if (t.includes('html')) return <FaHtml5 size={40} className="text-[#E34F26]" />;
+  if (t.includes('css')) return <FaCss3Alt size={40} className="text-[#1572B6]" />;
+
+  // Frameworks & Libraries
+  if (t.includes('django')) return <SiDjango size={40} className="text-[#092E20]" />;
+  if (t.includes('react')) return <FaReact size={40} className="text-[#61DAFB]" />;
+  if (t.includes('opencv')) return <SiOpencv size={40} className="text-[#5C3EE8]" />;
+  if (t.includes('tensorflow')) return <SiTensorflow size={40} className="text-[#FF6F00]" />;
+  if (t.includes('scikit') || t.includes('sklearn')) return <SiScikitlearn size={40} className="text-[#F7931E]" />;
+  if (t.includes('pandas')) return <SiPandas size={40} className="text-[#150458]" />;
+  if (t.includes('matplotlib')) return <span className="text-[#11557C] font-bold text-xl">📊</span>;
+
+  // Databases
+  if (t.includes('mysql')) return <SiMysql size={40} className="text-[#4479A1]" />;
+  if (t.includes('postgres') || t.includes('postgresql')) return <span className="text-[#4169E1] font-bold text-xl">PG</span>;
+
+  // Machine Learning & Data Science
+  if (t.includes('machine learning') || t.includes('ml')) return <SiTensorflow size={40} className="text-[#FF6F00]" />;
+  if (t.includes('nlp') || t.includes('natural language')) return <SiTensorflow size={40} className="text-[#FF6F00]" />;
+  if (t.includes('computer vision') || t.includes('cv')) return <SiOpencv size={40} className="text-[#5C3EE8]" />;
+  if (t.includes('tf-idf')) return <SiScikitlearn size={40} className="text-[#F7931E]" />;
+
+  // Regression / Stats
+  if (t.includes('lasso') || t.includes('ridge') || t.includes('regression')) return <SiScikitlearn size={40} className="text-[#F7931E]" />;
+
+  // Canvas / Browser
+  if (t.includes('canvas')) return <FaHtml5 size={40} className="text-[#E34F26]" />;
+
+  // Default text fallback with gradient
+  return (
+    <span className="font-mono text-gray-400 font-bold uppercase text-xl">
+      {techName[0]}
+    </span>
+  );
 };
 
 const ProjectCard = ({ project }) => {

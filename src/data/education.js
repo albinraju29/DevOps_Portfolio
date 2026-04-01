@@ -19,7 +19,7 @@ export const education = [
     degree: "Bachelor of Computer Applications (BCA)",
     institution: "Seth Ram Bahadur Singh Gujarati College (SRBS)",
     location: "Mattancherry, Kerala, India",
-    period: "Jun 2019 – Jun 2022",
+    period: "2019 – 2022",
     grade: "Grade B",
     bullets: [
       "Specialized in Computer and Information Sciences",
