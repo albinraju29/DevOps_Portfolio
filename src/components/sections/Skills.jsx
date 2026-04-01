@@ -4,6 +4,30 @@ import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import SkillBadge from '../ui/SkillBadge';
 import { skills } from '../../data/skills';
+import { 
+  FaCloud, 
+  FaDocker, 
+  FaGitlab, 
+  FaChartLine, 
+  FaServer, 
+  FaDatabase, 
+  FaCode, 
+  FaGitAlt,
+  FaTerminal
+} from 'react-icons/fa';
+import { SiTerraform } from 'react-icons/si';
+
+const iconMap = {
+  FaCloud: <FaCloud size={32} className="text-blue-cyan" />,
+  FaDocker: <FaDocker size={32} className="text-purple-accent" />,
+  FaGitlab: <FaGitlab size={32} className="text-blue-cyan" />,
+  SiTerraform: <SiTerraform size={32} className="text-purple-accent" />,
+  FaChartLine: <FaChartLine size={32} className="text-blue-cyan" />,
+  FaServer: <FaServer size={32} className="text-purple-accent" />,
+  FaDatabase: <FaDatabase size={32} className="text-blue-cyan" />,
+  FaCode: <FaCode size={32} className="text-purple-accent" />,
+  FaGitAlt: <FaGitAlt size={32} className="text-blue-cyan" />,
+};
 
 const Skills = () => {
   const cardsRef = useRef([]);
@@ -55,7 +79,11 @@ const Skills = () => {
               {/* Glowing orb in the background */}
               <div className="absolute -top-16 -right-16 w-32 h-32 rounded-full bg-blue-cyan/5 blur-3xl group-hover:bg-blue-cyan/20 transition-colors duration-500"></div>
               
-              <h3 className="text-xl font-syne font-bold text-white mb-6 border-b border-white/5 pb-4 flex items-center">
+              <div className="w-16 h-16 rounded-xl bg-dark border border-white/5 flex items-center justify-center mb-6 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300 shadow-inner relative z-10">
+                {iconMap[category.icon] || <FaTerminal size={32} className="text-white" />}
+              </div>
+
+              <h3 className="text-xl font-syne font-bold text-white mb-6 border-b border-white/5 pb-4 flex items-center relative z-10">
                 <span className="w-2 h-2 rounded-full bg-purple-accent mr-3"></span>
                 {category.category}
               </h3>
