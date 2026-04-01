@@ -38,7 +38,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 text-justify md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => (
@@ -48,7 +48,7 @@ const Projects = () => {
         </motion.div>
         
         {filteredProjects.length === 0 && (
-          <div className="w-full text-center py-20 font-mono text-gray-500">
+          <div className="w-full text-justify py-20 font-mono text-gray-500">
             No projects found for this category yet.
           </div>
         )}

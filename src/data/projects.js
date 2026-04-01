@@ -26,7 +26,7 @@ export const projects = [
     id: 3,
     title: "AWS Infrastructure with Terraform",
     description:
-      "Fully automated AWS cloud infrastructure using modular Terraform scripts — VPC, subnets, EC2, load balancers and security groups, all version controlled via GitHub.",
+      "Fully automated AWS cloud infrastructure using modular Terraform scripts, VPC, subnets, EC2, load balancers and security groups, all version controlled via GitHub.",
     category: "DevOps",
     tech: ["Terraform", "AWS", "IaC", "GitHub"],
     github: null,
@@ -50,7 +50,7 @@ export const projects = [
     id: 5,
     title: "Terraform AWS Infra",
     description:
-      "Production-ready AWS infrastructure provisioned with Terraform — VPC, EC2, S3, IAM and more.",
+      "Production-ready AWS infrastructure provisioned with Terraform, VPC, EC2, S3, IAM and more.",
     category: "DevOps",
     tech: ["Terraform", "AWS", "HCL"],
     github: "https://github.com/albinraju29/terraform-aws-infra",
@@ -83,7 +83,7 @@ export const projects = [
     id: 8,
     title: "Full Stack Docker",
     description:
-      "Containerized full stack application with Docker Compose — frontend, backend and database.",
+      "Containerized full stack application with Docker Compose, frontend, backend and database.",
     category: "DevOps",
     tech: ["Docker", "Docker Compose", "JavaScript"],
     github: "https://github.com/albinraju29/full-stack-docker",
@@ -96,7 +96,7 @@ export const projects = [
     id: 9,
     title: "MindMap",
     description:
-      "AI-powered automated attendance tracking system using facial recognition. Built with Django, MySQL and OpenCV with real-time reporting and personalized dashboards for admins, teachers and students.",
+      "AI-powered automated attendance tracking system using facial recognition. Built with Django, MySQL and OpenCV with real-time reporting & personalized dashboards for admins, teachers and students.",
     category: "College",
     tech: ["Django", "MySQL", "OpenCV", "Python", "Machine Learning", "Computer Vision"],
     github: "https://github.com/albinraju29/MindMap",
@@ -118,7 +118,7 @@ export const projects = [
     id: 11,
     title: "Book Genre Classification",
     description:
-      "NLP-based book genre classifier using TF-IDF and ML algorithms — Logistic Regression, Naive Bayes, Random Forest and SVM — to predict genres from book descriptions.",
+      "NLP-based book genre classifier using TF-IDF and ML algorithms, Logistic Regression, Naive Bayes, Random Forest and SVM, to predict genres from book descriptions.",
     category: "College",
     tech: ["Python", "Scikit-learn", "NLP", "TF-IDF", "Pandas", "Matplotlib"],
     github: "https://github.com/albinraju29/book-classification",

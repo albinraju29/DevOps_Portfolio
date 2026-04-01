@@ -133,7 +133,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 1 }}
             className="text-lg text-gray-400 max-w-lg leading-relaxed mt-2"
           >
-            "I automate, scale, and monitor infrastructure — so your team can focus on shipping."
+            "I automate, scale, and monitor infrastructure, so your team can focus on shipping."
           </motion.p>
 
           <motion.div 

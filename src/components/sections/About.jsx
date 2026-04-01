@@ -51,46 +51,46 @@ const About = () => {
     <section id="about" ref={sectionRef} className="py-24 relative bg-[#080d1a] border-b border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading title="About Me" subtitle="Who I Am" />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-12">
-          
+
           <div className="flex justify-center relative group">
             {/* Background Glow behind the card */}
             <div className="absolute -inset-4 bg-gradient-to-tr from-blue-cyan/20 to-purple-accent/20 blur-2xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-            <div 
-              ref={tiltRef} 
+            <div
+              ref={tiltRef}
               className="relative w-full max-w-[350px] aspect-square rounded-2xl border-2 border-white/10 shadow-[0_0_30px_rgba(124,58,237,0.2)] bg-[#0a0f1e]"
               style={{ transformStyle: 'preserve-3d' }}
             >
               {/* Back Glow Plate (Deep Layer) */}
-              <div 
+              <div
                 className="absolute inset-0 bg-gradient-to-br from-blue-cyan/10 to-purple-accent/10 rounded-2xl blur-xl"
                 style={{ transform: 'translateZ(-50px)' }}
               ></div>
 
               {/* Main Image (Middle Layer) */}
               <div className="absolute inset-0 overflow-hidden rounded-2xl">
-                <img 
-                  src={profileImg} 
-                  alt="Albin Raju" 
+                <img
+                  src={profileImg}
+                  alt="Albin Raju"
                   className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-100 brightness-110 contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/60 to-transparent"></div>
               </div>
 
               {/* Floating Accents (Front Layer) */}
-              <div 
+              <div
                 className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-blue-cyan z-20 m-4 pointer-events-none"
                 style={{ transform: 'translateZ(60px)' }}
               ></div>
-              <div 
+              <div
                 className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-purple-accent z-20 m-4 pointer-events-none"
                 style={{ transform: 'translateZ(60px)' }}
               ></div>
 
               {/* Glassmorphic Badge (Front Layer) */}
-              <div 
+              <div
                 className="absolute -top-4 -right-12 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl shadow-2xl z-30"
                 style={{ transform: 'translateZ(80px)' }}
               >
@@ -104,12 +104,12 @@ const About = () => {
               Engineering <span className="text-blue-cyan">Reliability</span> & <span className="text-purple-accent">Scale</span>.
             </h3>
 
-            <p className="text-gray-400 font-mono text-base leading-relaxed">
-              I'm Albin Raju — a DevOps Engineer who genuinely loves automating things. With an MCA background and hands-on experience in cloud infrastructure, CI/CD, and monitoring, I help teams build systems that just work.
+            <p className="text-gray-400 font-mono text-base leading-relaxed text-justify">
+              I'm Albin Raju, a DevOps Engineer who genuinely loves automating things. With an MCA background and hands-on experience in cloud infrastructure, CI/CD, and monitoring, I help teams build systems that just work.
             </p>
 
-            <p className="text-gray-400 font-mono text-base leading-relaxed">
-              I presented my research at NCACA 2024 and I'm open to remote freelance work — whether it's setting up infra from scratch or cleaning up what's already broken. 
+            <p className="text-gray-400 font-mono text-base leading-relaxed text-justify">
+              I presented my research at NCACA 2024 and I'm open to remote freelance work, whether it's setting up infra from scratch or cleaning up what's already broken.
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-8 p-6 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">

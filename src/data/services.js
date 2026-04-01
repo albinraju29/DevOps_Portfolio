@@ -10,14 +10,14 @@ export const services = [
     id: 2,
     title: "Cloud Infrastructure Setup",
     description:
-      "Provision and manage cloud resources on AWS, GCP or Azure — secure, scalable and cost-efficient.",
+      "Provision and manage cloud resources on AWS, GCP or Azure, secure, scalable and cost-efficient.",
     icon: "FaCloud",
   },
   {
     id: 3,
     title: "Server Management & Linux",
     description:
-      "Setup, harden and maintain Linux servers — NGINX, Apache, system monitoring and more.",
+      "Setup, harden and maintain Linux servers, NGINX, Apache, system monitoring and more.",
     icon: "FaServer",
   },
   {
@@ -52,7 +52,7 @@ export const services = [
     id: 8,
     title: "IaC with Terraform & Ansible",
     description:
-      "Define and automate your infrastructure as code — repeatable, version-controlled and reliable.",
+      "Define and automate your infrastructure as code, repeatable, version-controlled and reliable.",
     icon: "FaCogs",
   },
 ]
