@@ -17,7 +17,7 @@ const Hero = () => {
   const heroRef = useRef(null);
   const globeContainerRef = useRef(null);
 
-  const name = "Albin Raju";
+  const name = "ALBIN RAJU";
   const nameLetters = name.split("");
 
   useEffect(() => {
@@ -92,7 +92,7 @@ const Hero = () => {
             <span className="text-white text-3xl md:text-4xl font-medium">
               Hi, I'm
             </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-cyan via-cyan-400 to-purple-accent inline-block text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight whitespace-nowrap" style={{ textShadow: '0 0 40px rgba(0, 217, 255, 0.3)' }}>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-cyan via-cyan-400 to-purple-accent inline-block text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight whitespace-nowrap" style={{ textShadow: '0 0 40px rgba(0, 217, 255, 0.3)' }}>
               {nameLetters.map((letter, index) => (
                 <motion.span
                   key={index}
