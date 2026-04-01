@@ -12,7 +12,7 @@ export const skills = [
   {
     category: "CI/CD",
     icon: "FaGitlab",
-    items: ["GitLab CI/CD", "GitLab Runner", "Jenkins", "ArgoCD"],
+    items: ["GitLab CI/CD", "GitLab Runner", "GitHub Actions", "Jenkins", "ArgoCD"],
   },
   {
     category: "IaC",

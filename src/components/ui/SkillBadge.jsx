@@ -19,6 +19,7 @@ import {
   SiGit,
   SiGitlab,
   SiArgo,
+  SiGithubactions,
 } from 'react-icons/si';
 
 // Brand icon + official color map for every skill
@@ -33,6 +34,7 @@ const SKILL_ICON_MAP = {
   // CI/CD
   'GitLab CI/CD':     { icon: SiGitlab,        color: '#FC6D26' },
   'GitLab Runner':    { icon: SiGitlab,        color: '#FC6D26' },
+  'GitHub Actions':   { icon: SiGithubactions, color: '#2088FF' },
   'Jenkins':          { icon: SiJenkins,       color: '#D33833' },
   'ArgoCD':           { icon: SiArgo,          color: '#EF7B4D' },
   // IaC
