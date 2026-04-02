@@ -30,14 +30,29 @@ export const skills = [
     items: ["NGINX", "Apache"],
   },
   {
+    category: "Languages",
+    icon: "FaCode",
+    items: ["Python", "Bash", "JavaScript"],
+  },
+  {
+    category: "Frameworks",
+    icon: "FaServer",
+    items: ["Node.js", "React", "Next.js", "Django", "Laravel", "Strapi", "Magento"],
+  },
+  {
+    category: "Toolbox",
+    icon: "FaTerminal",
+    items: ["VS Code", "Kiro", "Claude Code", "Antigravity"],
+  },
+  {
     category: "Databases",
     icon: "FaDatabase",
     items: ["MySQL", "PostgreSQL", "MongoDB"],
   },
   {
-    category: "Languages",
-    icon: "FaCode",
-    items: ["Python", "Bash"],
+    category: "Security",
+    icon: "FaShieldAlt",
+    items: ["Linux Hardening", "SSL/TLS", "IAM", "Firewall", "Vault", "VAPT", "CORS"],
   },
   {
     category: "Version Control",

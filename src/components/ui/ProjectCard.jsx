@@ -37,6 +37,7 @@ const getTechIcon = (techName) => {
   if (t.includes('azure')) return <VscAzure size={40} className="text-[#0078D4]" />;
   if (t.includes('terraform')) return <SiTerraform size={40} className="text-[#7B42BC]" />;
   if (t.includes('ansible')) return <SiAnsible size={40} className="text-[#EE0000]" />;
+  if (t.includes('docker compose') || t.includes('docker-compose')) return <FaDocker size={40} className="text-[#2496ED]" />;
   if (t.includes('docker')) return <FaDocker size={40} className="text-[#2496ED]" />;
   if (t.includes('kubernetes')) return <SiKubernetes size={40} className="text-[#326CE5]" />;
   if (t.includes('nginx')) return <SiNginx size={40} className="text-[#009639]" />;

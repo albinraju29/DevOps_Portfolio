@@ -6,7 +6,7 @@ import BentoCard from '../ui/BentoGrid';
 import { skills } from '../../data/skills';
 import {
   FaCloud, FaDocker, FaGitlab, FaChartLine,
-  FaServer, FaDatabase, FaCode, FaGitAlt, FaTerminal
+  FaServer, FaDatabase, FaCode, FaGitAlt, FaTerminal, FaShieldAlt
 } from 'react-icons/fa';
 import { SiTerraform } from 'react-icons/si';
 
@@ -20,6 +20,8 @@ const iconMap = {
   FaDatabase: <FaDatabase size={32} className="text-blue-cyan" />,
   FaCode: <FaCode size={32} className="text-purple-accent" />,
   FaGitAlt: <FaGitAlt size={32} className="text-blue-cyan" />,
+  FaTerminal: <FaTerminal size={32} className="text-purple-accent" />,
+  FaShieldAlt: <FaShieldAlt size={32} className="text-blue-cyan" />,
 };
 
 const Skills = () => {
@@ -36,7 +38,7 @@ const Skills = () => {
               key={category.category}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
+              viewport={{ once: true, margin: '-50px', amount: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
               <BentoCard>

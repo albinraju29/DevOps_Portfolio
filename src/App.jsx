@@ -20,15 +20,13 @@ function App() {
       
       <main className="min-h-screen z-10 relative bg-dark">
         <Hero />
-        <Suspense fallback={null}>
-          <About />
-          <Skills />
-          <Experience />
-          <Education />
-          <Projects />
-          <Services />
-          <Contact />
-        </Suspense>
+        <Suspense fallback={null}><About /></Suspense>
+        <Suspense fallback={null}><Skills /></Suspense>
+        <Suspense fallback={null}><Experience /></Suspense>
+        <Suspense fallback={null}><Education /></Suspense>
+        <Suspense fallback={null}><Projects /></Suspense>
+        <Suspense fallback={null}><Services /></Suspense>
+        <Suspense fallback={null}><Contact /></Suspense>
 
         {/* Placeholder for others */}
       </main>

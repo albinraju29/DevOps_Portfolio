@@ -1,28 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaAws, FaDocker, FaGitlab, FaGit, FaTerminal, FaPython, FaCloud } from 'react-icons/fa';
+import { FaAws, FaDocker, FaGitlab, FaGit, FaTerminal, FaPython, FaCloud, FaReact, FaNode, FaLaravel, FaShopify, FaShieldAlt, FaLock, FaUserShield, FaFireAlt } from 'react-icons/fa';
 import {
-  SiGooglecloud,
-  SiKubernetes,
-  SiJenkins,
-  SiTerraform,
-  SiAnsible,
-  SiGrafana,
-  SiPrometheus,
-  SiPagerduty,
-  SiNginx,
-  SiApache,
-  SiMysql,
-  SiPostgresql,
-  SiMongodb,
-  SiGnubash,
-  SiGit,
-  SiGitlab,
-  SiArgo,
-  SiGithubactions,
+  SiGooglecloud, SiKubernetes, SiJenkins, SiTerraform, SiAnsible,
+  SiGrafana, SiPrometheus, SiPagerduty, SiNginx, SiApache,
+  SiMysql, SiPostgresql, SiMongodb, SiGnubash, SiGit, SiGitlab,
+  SiArgo, SiGithubactions, SiDjango, SiNextdotjs, SiStrapi, SiJavascript,
+  SiLetsencrypt, SiVault,
 } from 'react-icons/si';
 
-// Brand icon + official color map for every skill
 const SKILL_ICON_MAP = {
   // Cloud
   'AWS':              { icon: FaAws,           color: '#FF9900' },
@@ -53,9 +39,30 @@ const SKILL_ICON_MAP = {
   'MySQL':            { icon: SiMysql,         color: '#4479A1' },
   'PostgreSQL':       { icon: SiPostgresql,    color: '#336791' },
   'MongoDB':          { icon: SiMongodb,       color: '#47A248' },
-  // Languages
+  // Dev Stack
   'Python':           { icon: FaPython,        color: '#3776AB' },
   'Bash':             { icon: SiGnubash,       color: '#4EAA25' },
+  'JavaScript':       { icon: SiJavascript,    color: '#F7DF1E' },
+  'Node.js':          { icon: FaNode,          color: '#339933' },
+  'React':            { icon: FaReact,         color: '#61DAFB' },
+  'Next.js':          { icon: SiNextdotjs,     color: '#ffffff' },
+  'Django':           { icon: SiDjango,        color: '#092E20' },
+  'Laravel':          { icon: FaLaravel,       color: '#FF2D20' },
+  'Strapi':           { icon: SiStrapi,        color: '#4945FF' },
+  'Magento':          { icon: FaTerminal,      color: '#EE672F' },
+  // Toolbox
+  'VS Code':          { icon: FaTerminal,      color: '#007ACC' },
+  'Kiro':             { icon: FaTerminal,      color: '#00D9FF' },
+  'Claude Code':      { icon: FaTerminal,      color: '#D97757' },
+  'Antigravity':      { icon: FaTerminal,      color: '#7C3AED' },
+  // Security
+  'Linux Hardening':  { icon: FaShieldAlt,     color: '#EE0000' },
+  'SSL/TLS':          { icon: SiLetsencrypt,   color: '#003A70' },
+  'IAM':              { icon: FaUserShield,    color: '#FF9900' },
+  'Firewall':         { icon: FaFireAlt,       color: '#FF4500' },
+  'Vault':            { icon: SiVault,         color: '#FFCF25' },
+  'VAPT':             { icon: FaShieldAlt,     color: '#CC2936' },
+  'CORS':             { icon: FaLock,          color: '#4285F4' },
   // Version Control
   'Git':              { icon: SiGit,           color: '#F05032' },
   'GitLab':           { icon: FaGitlab,        color: '#FC6D26' },
