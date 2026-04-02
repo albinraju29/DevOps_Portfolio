@@ -13,6 +13,8 @@ import EarthGlobe from '../ui/EarthGlobe';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const isMobile = window.innerWidth < 768;
+
 const Hero = () => {
   const heroRef = useRef(null);
   const globeContainerRef = useRef(null);
@@ -50,7 +52,8 @@ const Hero = () => {
       {/* Backgrounds */}
       <ParticleBackground />
       
-      {/* 3D Globe - lazy loaded via Suspense */}
+      {/* 3D Globe - desktop only */}
+      {!isMobile && (
       <div 
         ref={globeContainerRef}
         className="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-[60vh] md:h-screen pointer-events-none opacity-30 md:opacity-100 z-0 overflow-hidden"
@@ -74,6 +77,7 @@ const Hero = () => {
         </Canvas>
       </Suspense>
       </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-6 w-full z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
