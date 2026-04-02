@@ -50,6 +50,9 @@ const Footer = () => {
       {/* Copyright */}
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center flex flex-col md:flex-row items-center justify-between font-mono text-xs text-gray-500">
         <p>&copy; {currentYear} Albin Raju. All rights reserved.</p>
+        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="mt-2 md:mt-0 hover:text-blue-cyan transition-colors flex items-center gap-1 group">
+          Back to top <span className="group-hover:-translate-y-1 transition-transform inline-block">↑</span>
+        </button>
         <p className="mt-2 md:mt-0">Designed & Built with React + Vite + Tailwind</p>
       </div>
     </footer>

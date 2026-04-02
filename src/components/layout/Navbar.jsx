@@ -15,10 +15,13 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(total > 0 ? (window.scrollY / total) * 100 : 0);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -32,6 +35,8 @@ const Navbar = () => {
           : 'bg-transparent py-6'
       }`}
     >
+      {/* Scroll progress bar */}
+      <div className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-blue-cyan to-purple-accent transition-all duration-100" style={{ width: `${scrollProgress}%` }} />
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="text-2xl font-syne font-bold tracking-tight z-50">
           <span className="text-white">Albin</span>

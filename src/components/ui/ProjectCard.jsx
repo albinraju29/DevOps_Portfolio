@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from 'react';
-import VanillaTilt from 'vanilla-tilt';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub, FaReact, FaAws, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker, FaCloud, FaTerminal, FaCode } from 'react-icons/fa';
@@ -95,23 +94,6 @@ const getTechIcon = (techName) => {
 };
 
 const ProjectCard = ({ project }) => {
-  const cardRef = useRef(null);
-
-  useEffect(() => {
-    if (cardRef.current) {
-      VanillaTilt.init(cardRef.current, {
-        max: 8,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.15,
-      });
-    }
-    return () => {
-      if (cardRef.current && cardRef.current.vanillaTilt) {
-        cardRef.current.vanillaTilt.destroy();
-      }
-    }
-  }, []);
 
   return (
     <motion.div
@@ -120,7 +102,6 @@ const ProjectCard = ({ project }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.3 }}
-      ref={cardRef}
       className="bg-[#0b101e] rounded-xl border border-white/10 hover:border-blue-cyan/40 shadow-lg hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] overflow-hidden flex flex-col h-full group"
     >
       {/* Image or Fallback */}

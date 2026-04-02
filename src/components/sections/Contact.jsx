@@ -141,80 +141,48 @@ const Contact = () => {
               <div className="absolute -top-32 -right-32 w-64 h-64 bg-blue-cyan/5 blur-[80px] rounded-full pointer-events-none group-focus-within/form:bg-blue-cyan/10 transition-colors duration-500"></div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                <div className="flex flex-col gap-2 relative">
+                <div className="flex flex-col gap-2">
                   <label htmlFor="name" className="font-mono text-[10px] uppercase tracking-widest text-gray-400 ml-1">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
+                  <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange}
                     style={{ color: '#ffffff', caretColor: '#00D9FF' }}
-                    className="bg-[#0b101e] text-white caret-blue-400 border border-white/10 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-blue-cyan focus:shadow-[0_0_15px_rgba(0,217,255,0.2)] transition-all w-full placeholder:text-gray-500"
-                    placeholder="John Doe"
-                  />
+                    className="bg-[#060913] border border-white/10 rounded-lg px-4 py-3 font-mono text-sm focus:outline-none focus:border-blue-cyan focus:bg-blue-cyan/5 focus:shadow-[0_0_20px_rgba(0,217,255,0.15)] transition-all w-full placeholder:text-gray-600"
+                    placeholder="John Doe" />
                 </div>
-                <div className="flex flex-col gap-2 relative">
+                <div className="flex flex-col gap-2">
                   <label htmlFor="phone" className="font-mono text-[10px] uppercase tracking-widest text-gray-400 ml-1">Phone</label>
-                  <input
-                    type="text"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
+                  <input type="text" id="phone" name="phone" value={formData.phone} onChange={handleChange}
                     style={{ color: '#ffffff', caretColor: '#00D9FF' }}
-                    className="bg-[#0b101e] text-white caret-blue-400 border border-white/10 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-blue-cyan focus:shadow-[0_0_15px_rgba(0,217,255,0.2)] transition-all w-full placeholder:text-gray-500"
-                    placeholder="+1 234 567 8900"
-                  />
+                    className="bg-[#060913] border border-white/10 rounded-lg px-4 py-3 font-mono text-sm focus:outline-none focus:border-blue-cyan focus:bg-blue-cyan/5 focus:shadow-[0_0_20px_rgba(0,217,255,0.15)] transition-all w-full placeholder:text-gray-600"
+                    placeholder="+1 234 567 8900" />
                 </div>
               </div>
 
               <div className="flex flex-col gap-2 mb-6">
                 <label htmlFor="email" className="font-mono text-[10px] uppercase tracking-widest text-gray-400 ml-1">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
+                <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange}
                   style={{ color: '#ffffff', caretColor: '#00D9FF' }}
-                  className="bg-[#0b101e] text-white caret-blue-400 border border-white/10 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-purple-accent focus:shadow-[0_0_15px_rgba(124,58,237,0.2)] transition-all w-full placeholder:text-gray-500"
-                  placeholder="john@example.com"
-                />
+                  className="bg-[#060913] border border-white/10 rounded-lg px-4 py-3 font-mono text-sm focus:outline-none focus:border-purple-accent focus:bg-purple-accent/5 focus:shadow-[0_0_20px_rgba(124,58,237,0.15)] transition-all w-full placeholder:text-gray-600"
+                  placeholder="john@example.com" />
               </div>
 
               <div className="flex flex-col gap-2 mb-6">
                 <label htmlFor="subject" className="font-mono text-[10px] uppercase tracking-widest text-gray-400 ml-1">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  autoComplete="off"
-                  required
-                  value={formData.subject}
-                  onChange={handleChange}
+                <input type="text" id="subject" name="subject" autoComplete="off" required value={formData.subject} onChange={handleChange}
                   style={{ color: '#ffffff', caretColor: '#00D9FF' }}
-                  className="bg-[#0b101e] text-white caret-blue-400 border border-white/10 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-purple-accent focus:shadow-[0_0_15px_rgba(124,58,237,0.2)] transition-all w-full placeholder:text-gray-500"
-                  placeholder="How can I help you?"
-                />
+                  className="bg-[#060913] border border-white/10 rounded-lg px-4 py-3 font-mono text-sm focus:outline-none focus:border-purple-accent focus:bg-purple-accent/5 focus:shadow-[0_0_20px_rgba(124,58,237,0.15)] transition-all w-full placeholder:text-gray-600"
+                  placeholder="How can I help you?" />
               </div>
 
-              <div className="flex flex-col gap-2 mb-8 relative">
-                <label htmlFor="message" className="font-mono text-[10px] uppercase tracking-widest text-gray-400 ml-1">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  autoComplete="off"
-                  required
-                  rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
+              <div className="flex flex-col gap-2 mb-8">
+                <div className="flex items-center justify-between ml-1">
+                  <label htmlFor="message" className="font-mono text-[10px] uppercase tracking-widest text-gray-400">Message</label>
+                  <span className="font-mono text-[10px] text-gray-600">{formData.message.length}/500</span>
+                </div>
+                <textarea id="message" name="message" autoComplete="off" required rows="4" maxLength={500}
+                  value={formData.message} onChange={handleChange}
                   style={{ color: '#ffffff', caretColor: '#00D9FF' }}
-                  className="bg-[#0b101e] text-white caret-blue-400 border border-white/10 rounded-lg px-4 py-3 text-white font-mono text-sm focus:outline-none focus:border-blue-cyan focus:shadow-[0_0_15px_rgba(0,217,255,0.2)] transition-all w-full resize-none placeholder:text-gray-500"
-                  placeholder="Tell me about your infrastructure needs..."
-                ></textarea>
+                  className="bg-[#060913] border border-white/10 rounded-lg px-4 py-3 font-mono text-sm focus:outline-none focus:border-blue-cyan focus:bg-blue-cyan/5 focus:shadow-[0_0_20px_rgba(0,217,255,0.15)] transition-all w-full resize-none placeholder:text-gray-600"
+                  placeholder="Tell me about your infrastructure needs..." />
               </div>
 
               {error && (
