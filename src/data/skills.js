@@ -27,7 +27,7 @@ export const skills = [
   {
     category: "Web Servers",
     icon: "FaServer",
-    items: ["NGINX", "Apache"],
+    items: ["NGINX", "Apache", "Linux"],
   },
   {
     category: "Languages",
@@ -42,7 +42,7 @@ export const skills = [
   {
     category: "Toolbox",
     icon: "FaTerminal",
-    items: ["VS Code", "Kiro", "Claude Code", "Antigravity"],
+    items: ["VS Code", "Postman", "Claude Code", "Antigravity", "Kiro"],
   },
   {
     category: "Databases",

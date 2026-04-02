@@ -6,7 +6,7 @@ import {
   SiGrafana, SiPrometheus, SiPagerduty, SiNginx, SiApache,
   SiMysql, SiPostgresql, SiMongodb, SiGnubash, SiGit, SiGitlab,
   SiArgo, SiGithubactions, SiDjango, SiNextdotjs, SiStrapi, SiJavascript,
-  SiLetsencrypt, SiVault,
+  SiLetsencrypt, SiVault, SiLinux, SiPostman,
 } from 'react-icons/si';
 
 const SKILL_ICON_MAP = {
@@ -35,6 +35,7 @@ const SKILL_ICON_MAP = {
   // Web Servers
   'NGINX':            { icon: SiNginx,         color: '#009639' },
   'Apache':           { icon: SiApache,        color: '#D22128' },
+  'Linux':            { icon: SiLinux,         color: '#FCC624' },
   // Databases
   'MySQL':            { icon: SiMysql,         color: '#4479A1' },
   'PostgreSQL':       { icon: SiPostgresql,    color: '#336791' },
@@ -52,6 +53,7 @@ const SKILL_ICON_MAP = {
   'Magento':          { icon: FaTerminal,      color: '#EE672F' },
   // Toolbox
   'VS Code':          { icon: FaTerminal,      color: '#007ACC' },
+  'Postman':          { icon: SiPostman,       color: '#FF6C37' },
   'Kiro':             { icon: FaTerminal,      color: '#00D9FF' },
   'Claude Code':      { icon: FaTerminal,      color: '#D97757' },
   'Antigravity':      { icon: FaTerminal,      color: '#7C3AED' },
