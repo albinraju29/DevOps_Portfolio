@@ -2,6 +2,7 @@ import React from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 
 const CustomCursor = () => {
+  if (!window.matchMedia('(pointer: fine)').matches) return null;
   return (
     <AnimatedCursor
       innerSize={8}

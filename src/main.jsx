@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import Lenis from 'lenis'
 import gsap from 'gsap'
@@ -25,9 +24,7 @@ gsap.ticker.add((time) => {
 gsap.ticker.lagSmoothing(0)
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </StrictMode>,
+  <ErrorBoundary>
+    <App />
+  </ErrorBoundary>,
 )

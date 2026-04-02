@@ -17,12 +17,12 @@ const EarthGlobe = () => {
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1.5} color="#00D9FF" />
       <directionalLight position={[-10, -10, -5]} intensity={1} color="#7C3AED" />
-      <Sphere ref={sphereRef} args={[2.2, 64, 64]} position={[0, 0, 0]}>
+      <Sphere ref={sphereRef} args={[2.2, 32, 32]} position={[0, 0, 0]}>
         <MeshDistortMaterial
           color="#060913"
           attach="material"
           distort={0.4}
-          speed={2}
+          speed={1}
           roughness={0.2}
           wireframe={true}
           transparent={true}
