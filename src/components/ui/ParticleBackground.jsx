@@ -24,10 +24,10 @@ const ParticleBackground = () => {
         background: {
           color: { value: 'transparent' },
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         interactivity: {
           events: {
-            onHover: { enable: true, mode: 'grab' },
+            onHover: { enable: window.matchMedia('(pointer: fine)').matches, mode: 'grab' },
           },
           modes: {
             grab: { distance: 140, links: { opacity: 0.5 } },
@@ -58,7 +58,7 @@ const ParticleBackground = () => {
           shape: { type: 'circle' },
           size: { value: { min: 1, max: 2 } },
         },
-        detectRetina: true,
+        detectRetina: false,
       }}
       className="absolute inset-0 z-0 pointer-events-none"
     />

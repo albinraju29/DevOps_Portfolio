@@ -58,7 +58,7 @@ const Hero = () => {
       <Suspense fallback={null}>
         <Canvas
           camera={{ position: [0, 0, 6], fov: 45 }}
-          dpr={[1, 2]}
+          dpr={[1, 1.5]}
           gl={{
             alpha: true,
             antialias: true,

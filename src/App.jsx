@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import CustomCursor from './components/ui/AnimatedCursor';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Skills from './components/sections/Skills';
-import Experience from './components/sections/Experience';
-import Education from './components/sections/Education';
-import Projects from './components/sections/Projects';
-import Services from './components/sections/Services';
-import Contact from './components/sections/Contact';
+
+const About = lazy(() => import('./components/sections/About'));
+const Skills = lazy(() => import('./components/sections/Skills'));
+const Experience = lazy(() => import('./components/sections/Experience'));
+const Education = lazy(() => import('./components/sections/Education'));
+const Projects = lazy(() => import('./components/sections/Projects'));
+const Services = lazy(() => import('./components/sections/Services'));
+const Contact = lazy(() => import('./components/sections/Contact'));
 
 function App() {
   return (
@@ -19,13 +20,15 @@ function App() {
       
       <main className="min-h-screen z-10 relative bg-dark">
         <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Education />
-        <Projects />
-        <Services />
-        <Contact />
+        <Suspense fallback={null}>
+          <About />
+          <Skills />
+          <Experience />
+          <Education />
+          <Projects />
+          <Services />
+          <Contact />
+        </Suspense>
 
         {/* Placeholder for others */}
       </main>

@@ -6,7 +6,7 @@ import VanillaTilt from 'vanilla-tilt';
 import CountUpImport from 'react-countup';
 const CountUp = CountUpImport.default || CountUpImport;
 import SectionHeading from '../ui/SectionHeading';
-import profileImg from '../../assets/images/profile.jpg';
+import profileImg from '../../assets/images/profile.webp';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +74,7 @@ const About = () => {
                 <img
                   src={profileImg}
                   alt="Albin Raju"
-                  className="w-full h-full object-cover transition-transform duration-500 scale-110 group-hover:scale-100 brightness-110 contrast-110"
+                  className="w-full h-full object-cover transition-transform duration-500 scale-100 group-hover:scale-110 brightness-110 contrast-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f1e]/60 to-transparent"></div>
               </div>
